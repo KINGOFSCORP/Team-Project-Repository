@@ -3,7 +3,7 @@ from PIL import ImageTk,Image
 
 root = Tk()
 root.title('Eco-Life')
-root.geometry("300x300")
+root.geometry("400x400")
 
 my_img = ImageTk.PhotoImage(Image.open("environment.jpg"))
 my_label = Label(image = my_img)
