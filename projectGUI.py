@@ -1,15 +1,22 @@
-import tkinter as tk
+from tkinter import *
+from PIL import ImageTk,Image
 
-window = tk.Tk()
-window.title("Eco-Life")
-window.geometry("300x300")
+root = Tk()
+root.title('Eco-Life')
+root.geometry("300x300")
 
-hello = tk.Label(text="Hello world!")
+my_img = ImageTk.PhotoImage(Image.open("environment.jpg"))
+my_label = Label(image = my_img)
+my_label.pack()
+
+hello = Label(text="Hello world!")
 hello.pack()
-button = tk.Button(text="Click me!")
-button.pack()
-button2 = tk.Button(text = "Click")
 
+button = Button(text="Click me!")
 button.pack()
 
-tk.mainloop()
+btn = Button(root, text="Exit Program", command = root.quit)
+btn.pack()
+
+root.mainloop()
+
