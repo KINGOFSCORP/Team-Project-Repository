@@ -1,16 +1,31 @@
-# This is a sample Python script.
+from tkinter import *
+import time
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+root = Tk()
+root.title('Clock')
+root.geometry("600x400")
 
+def clock():
+    hour = time.strftime("%H")
+    minute = time.strftime("%M")
+    second = time.strftime("%S")
+    timeZone = time.strftime("%Z")
+    day = time.strftime("%a")
+    date = time.strftime("%d")
+    month = time.strftime("%b")
+    year = time.strftime("%Y")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    my_label.config(text = hour + ":" + minute + ":" + second + " EST" )
+    my_label.after(1000, clock)
 
+    my_label2.config(text= day + ", " + date + " " + month + ", " + year)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+my_label = Label(root, text = "")
+my_label.pack()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+my_label2 = Label(root, text = "")
+my_label2.pack()
+
+clock()
+
+root.mainloop()
