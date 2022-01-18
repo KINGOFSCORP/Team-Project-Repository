@@ -1,15 +1,70 @@
 from tkinter import *
-from PIL import ImageTk,Image
 
 root = Tk()
-root.title('Eco-Life')
-root.geometry("800x500")
 
-#bg = PhotoImage(Image.open("environment.jpg"))
-bg = ImageTk.PhotoImage(Image.open("bg.png"))
+root.title("Example Title ")
+root.geometry('500x300')
 
-my_canvas = Canvas(root, width=800, height=500)
-my_canvas.pack(fill="both", expand=True)
-my_canvas.create_image(0, 0, image=bg, anchor="nw")
+extPlantTF = False
+intPlantTF = False
+flowerTF = False
+fruVegTF = False
+lowWaterTF = False
+
+
+def funcExtPlantBtn(extPlantTF):
+    extPlantTF = True
+
+
+def funcIntPlantBtn(intPlantTF):
+    intPlantTF = True
+
+
+def funcFlowerBtn(flowerTF):
+    flowerTF = True
+
+
+def funcFruVegBtn(fruVegTF):
+    fruVegTF = True
+
+
+def funcLowWaterBtn(lowWaterTF):
+    lowWaterTF = True
+
+
+extPlant = Label(text="Exterior")
+extPlant.pack()
+
+extPlantBtn = Button(text=" ", width=1, command=funcExtPlantBtn(extPlantTF))
+extPlantBtn.pack()
+
+intPlant = Label(text="Interior")
+intPlant.pack()
+
+intPlantBtn = Button(text=" ", width=1, command=funcIntPlantBtn(intPlantTF))
+intPlantBtn.pack()
+
+flower = Label(text="Flowers")
+flower.pack()
+
+flowerBtn = Button(text=" ", width=1, command=funcFlowerBtn(flowerTF))
+flowerBtn.pack()
+
+fruVeg = Label(text="Fruits/Vegetables")
+fruVeg.pack()
+
+fruVegBtn = Button(text=" ", width=1, command=funcFruVegBtn(fruVegTF))
+fruVegBtn.pack()
+
+lowWater = Label(text="Low-water")
+lowWater.pack()
+
+lowWaterBtn = Button(text="✔", width=1, command=funcLowWaterBtn(lowWaterTF))
+lowWaterBtn.pack()
+
+plantMsg = Label(text="Our Recommendations")
+plantMsg.pack()
+
+if 
 
 root.mainloop()
